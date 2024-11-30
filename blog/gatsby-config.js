@@ -26,8 +26,8 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options:{
-        spaceId:`${process.env.SPACE_ID}`,
-        accessToken:`${process.env.ACCESS_TOKEN}`
+        spaceId: `${process.env.SPACE_ID}`,
+        accessToken: `${process.env.ACCESS_TOKEN}`
       }
     },
     `gatsby-plugin-image`,
@@ -38,6 +38,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
