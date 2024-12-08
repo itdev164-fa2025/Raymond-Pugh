@@ -2,6 +2,9 @@ import * as React from "react";
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { H1 } from '../Heading';
+import Section from '../Section'
+
 
 const StyledHeader = styled.header`
   margin: 0 auto;
@@ -19,11 +22,18 @@ const StyledLink = styled(Link)`
   color: ${(props) => props.theme.header.color};
 `;
 
- const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle }) => (
   <StyledHeader>
-    <StyledLink to="/">{siteTitle}</StyledLink>
+    <Section width={11/12}>
+    <StyledLink>
+      <H1>{siteTitle}</H1>
+    </StyledLink>
+    </Section>
+    <Section width={1/12}>Search</Section>
   </StyledHeader>
 );
+
+
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
