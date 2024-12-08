@@ -1,24 +1,15 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
+import {H1} from '../components/Heading'
 
 const BlogPost = ({ data }) => {
   const { title, body } = data.contentfulPost;
 
   return (
     <Layout>
-      <h1>{title}</h1>
-      <div>
-        {body?.childMarkdownRemark?.html ? (
-          <div
-            dangerouslySetInnerHTML={{
-              __html: body.childMarkdownRemark.html,
-            }}
-          ></div>
-        ) : (
-          <p>Content not available.</p>
-        )}
-      </div>
+   <H1>{title}</H1>
+   <div dangerouslySetInnerHTML={{__html:body.childMarkDownRemark.html}}></div>
     </Layout>
   );
 };
